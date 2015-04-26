@@ -4,19 +4,20 @@
 
 destdir <- "UCI HAR Dataset"
 
-## Set the working directory in the data folder
+## Check if the data set is in the working directory
 if (!file.exists(destdir)) {
-        errorMessage <- sprintf("This script requires the folder '%s' to be in the working directory.", destdir)
+        errorMessage <- sprintf("This script requires the folder '%s' to be in the working directory.", 
+                                destdir)
         stop(errorMessage)
 }
+
+## Set the working directory to the top level of the data set
 oldWd <- getwd()
 setwd(destdir)
 
 library(ifultools)
 library(dplyr)
 library(readr)
-
-extractRegExpr <- "\\.mean\\.|\\.std\\."
 
 ## Load the feature variable names (and ensure that column names are unique)
 features <- read.table("./features.txt")
@@ -50,6 +51,8 @@ loadData <- function(datafile, myColNames, min.value, max.value, useReadr) {
         ## Return the data
         return(data)
 }
+
+extractRegExpr <- "\\.mean\\.|\\.std\\."
 
 ## Helper function for loading and checking sets of data files
 ## Extract the direct means and standard deviations of the feature variables 
