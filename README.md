@@ -10,7 +10,7 @@ analysis is to tidy and summarize the original data for further work.
 For more information about the experiment and the original data set, please see: 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-## Using the Script
+## Running the Script
 The script run_analysis.R assumes that the experimental data set has already
 been downloaded and unzipped into the current working directory. The script also 
 assumes that the data set retains its original name of "UCI HAR Dataset" and its 
